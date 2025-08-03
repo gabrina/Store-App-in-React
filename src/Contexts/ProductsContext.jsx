@@ -4,7 +4,7 @@ import api from "../Services/config";
 const productsContex = createContext();
 
 function ProductsProvider({ children }) {
-  const [products, setProducts] = useState();
+  const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {

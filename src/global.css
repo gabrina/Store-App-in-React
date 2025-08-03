@@ -1,6 +1,12 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
+  --global-radius: 8px;
+  --global-border-color: #cfcfcf;
+  --green: #8ac926;
+  --red: #ff595e;
+  --yellow: #ffca3a;
+  --blue:#113768;
 }
 
 body {
@@ -11,13 +17,13 @@ body {
   background-color: #f9fafc;
 }
 
-*{
+* {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
 }
 
-a{
+a {
   text-decoration: inherit;
   color: inherit;
 }
