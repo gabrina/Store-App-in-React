@@ -7,14 +7,14 @@ import { useEffect, useState } from "react";
 import { FaListUl } from "react-icons/fa";
 
 function ProductPage() {
-  useEffect(() => {
-    setFilteredProducts([...products]);
-  }, []);
   const products = useProducts();
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
   const [filteredProducts, setFilteredProducts] = useState([]);
-
+  useEffect(() => {
+    setFilteredProducts([...products]);
+  }, [products]);
+  // sensitive to products change, so when the products data is fetched, it rerenders
   const searchHandler = () => {
     setFilteredProducts(
       products.filter((product) =>
@@ -28,6 +28,7 @@ function ProductPage() {
     if (tagName !== "LI") return;
     setCategory(innerText.toLowerCase());
   };
+
   return (
     <>
       <div className={Styles.searchBar}>
