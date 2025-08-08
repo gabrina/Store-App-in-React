@@ -2,90 +2,57 @@ import { useProducts } from "../Contexts/ProductsContext";
 import ProductCard from "../Components/ProductCard";
 import Loader from "../Components/Loader";
 import Styles from "./ProductPage.module.css";
-import { MdSearch } from "react-icons/md";
 import { useEffect, useState } from "react";
-import { FaListUl } from "react-icons/fa";
+import { searchProductByName } from "../helpers/searchProductByName";
+import { searchProductByCategory } from "../helpers/searchProductByCategory";
+import { useSearchParams } from "react-router-dom";
+import { getInitialParams } from "../helpers/getInitialParams";
+import SearchBox from "../Components/SearchBox";
+import Sidebar from "../Components/Sidebar";
 
 function ProductPage() {
   const products = useProducts();
   const [search, setSearch] = useState("");
-  const [category, setCategory] = useState("All");
-  const [filteredProducts, setFilteredProducts] = useState([]);
-  useEffect(() => {
-    setFilteredProducts([...products]);
-  }, [products]);
-  // sensitive to products change, so when the products data is fetched, it rerenders
-  const searchHandler = () => {
-    setFilteredProducts(
-      products.filter((product) =>
-        product.title.toLowerCase().trim().includes(search.toLowerCase().trim())
-      )
-    );
-  };
+  const [query, setQuery] = useState({});
+  const [displayedProducts, setDisplayedProducts] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  const categoryHandler = (event) => {
-    const { tagName, innerText } = event.target;
-    if (tagName !== "LI") return;
-    setCategory(innerText.toLowerCase());
-  };
+  //هوک را فقط در کامپوننت های ری اکتی میتوان استفاده کرد
+
+  useEffect(() => {
+    setDisplayedProducts(products);
+    setQuery(getInitialParams(searchParams));
+  }, [products]);
+
+  useEffect(() => {
+    //adding the value of query to the URL
+    //for cases when the user doesn't provide the search value,
+    // set it to empty string
+    setSearch(query.search || "");
+    //for cases when user enter search string in URL(i guess)
+    //it also set the value of input box, to the new one
+    setSearchParams(query);
+    //Souldn't we add the same thing for category?
+    let searchedProducts = searchProductByName(products, query.search);
+    searchedProducts = searchProductByCategory(
+      searchedProducts,
+      query.category
+    );
+    setDisplayedProducts(searchedProducts);
+  }, [query]);
 
   return (
     <>
-      <div className={Styles.searchBar}>
-        <input
-          type="text"
-          placeholder="Type to search"
-          value={search}
-          onChange={(e) => setSearch(e.target.value.toLowerCase().trim())}
-        />
-        <button onClick={searchHandler}>
-          <MdSearch />
-        </button>
-      </div>
+      <SearchBox search={search} setSearch={setSearch} setQuery={setQuery} />
       <div className={Styles.container}>
         <div className={Styles.products}>
           {!products.length && <Loader />}
-          {filteredProducts.map((product) => (
+          {!displayedProducts.length && <p>Not Found</p>}
+          {displayedProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
-        <div className={Styles.sidebar}>
-          <header>
-            <FaListUl color="var(--blue)" />
-            <span>Categories</span>
-          </header>
-          <ul onClick={categoryHandler}>
-            <li className={category === "All" ? Styles.selectedCategory : ""}>
-              All
-            </li>
-            <li
-              className={
-                category === "Electronics" ? Styles.selectedCategory : ""
-              }
-            >
-              Electronics
-            </li>
-            <li
-              className={category === "Jewelery" ? Styles.selectedCategory : ""}
-            >
-              Jewelery
-            </li>
-            <li
-              className={
-                category === "Men's clothing" ? Styles.selectedCategory : ""
-              }
-            >
-              Men's clothing
-            </li>
-            <li
-              className={
-                category === "Women's clothing" ? Styles.selectedCategory : ""
-              }
-            >
-              Women's clothing
-            </li>
-          </ul>
-        </div>
+        <Sidebar query={query} setQuery={setQuery} />
       </div>
     </>
   );

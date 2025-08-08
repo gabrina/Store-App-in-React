@@ -1,0 +1,30 @@
+.searchBar {
+}
+
+.searchBar input {
+  border: 1px solid var(--global-border-color);
+  border-radius: var(--global-radius);
+  height: 30px;
+  width: 200px;
+  padding: 0px 5px;
+  margin-right: 10px;
+}
+
+.searchBar input:focus {
+  outline: none;
+}
+
+.searchBar button {
+  height: 30px;
+  width: 30px;
+  border: 1px solid var(--global-border-color);
+  border-radius: var(--global-radius);
+  transition: ease-in 0.2s;
+  background-color: white;
+}
+
+.searchBar button:hover {
+  cursor: pointer;
+  background-color: var(--blue);
+  color: white;
+}

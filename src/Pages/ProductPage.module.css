@@ -3,87 +3,9 @@
   justify-content: space-between;
 }
 
-.searchBar {
-}
-
-.searchBar input {
-  border: 1px solid var(--global-border-color);
-  border-radius: var(--global-radius);
-  height: 30px;
-  width: 200px;
-  padding: 0px 5px;
-  margin-right: 10px;
-}
-
-.searchBar input:focus {
-  outline: none;
-}
-
-.searchBar button {
-  height: 30px;
-  width: 30px;
-  border: 1px solid var(--global-border-color);
-  border-radius: var(--global-radius);
-  transition: ease-in 0.2s;
-  background-color: white;
-}
-
-.searchBar button:hover {
-  cursor: pointer;
-  background-color: var(--blue);
-  color: white;
-}
-
 .products {
   width: 85%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-
-.sidebar {
-  width: 200px;
-  /* height: 300px; */
-  background-color: white;
-  height: fit-content;
-  margin: 20px 10px 0px 10px;
-  padding: 10px;
-  border-radius: var(--global-radius);
-  border: 1px solid var(--global-border-color);
-}
-
-.sidebar header {
-  display: flex;
-  align-items: center;
-  margin-bottom:15px;
-}
-
-.sidebar span {
-  margin-left: 10px;
-  color: var(--blue);
-  font-weight: bold;
-}
-
-.sidebar ul {
-  list-style: none;
-}
-
-.sidebar li {
-  margin: 3px 0px;
-  /* font-weight: bold; */
-  border-radius: var(--global-radius);
-  padding: 5px;
-  transition: ease-in 0.2s;
-}
-
-.sidebar li:hover {
-  color: white;
-  background-color: var(--light-blue);
-  cursor: pointer;
-}
-
-.selectedCategory {
-  color: white;
-  background-color: var(--blue);
-  pointer-events: none;
 }
