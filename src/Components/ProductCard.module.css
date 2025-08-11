@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: space-around;
   background-color: white;
-  padding:20px 15px 5px 15px;
+  padding: 20px 15px 5px 15px;
   width: 200px;
   height: 300px;
 }
@@ -24,8 +24,8 @@
 
 .card span {
   font-weight: 500;
-  text-align:left;
-  width:100%;
+  text-align: left;
+  width: 100%;
 }
 
 .icons {
@@ -46,4 +46,10 @@
   cursor: pointer;
   color: white;
   background-color: var(--blue);
+}
+
+.button {
+  border: none;
+  background-color: transparent;
+  text-align: right;
 }

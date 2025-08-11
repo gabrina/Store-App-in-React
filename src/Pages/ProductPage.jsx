@@ -11,7 +11,7 @@ import SearchBox from "../Components/SearchBox";
 import Sidebar from "../Components/Sidebar";
 
 function ProductPage() {
-  const products = useProducts();
+  const products = useProducts();//getting data from context
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState({});
   const [displayedProducts, setDisplayedProducts] = useState([]);

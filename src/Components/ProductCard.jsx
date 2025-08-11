@@ -1,10 +1,25 @@
 import Styles from "./ProductCard.module.css";
-import { RiMoreFill, RiShoppingCartLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { shortenText } from "../helpers/shortenText";
+import { productQuantity } from "../helpers/productQuantity";
+import { useCart } from "../Contexts/CartContext";
+
+import {
+  RiMoreFill,
+  RiShoppingCartLine,
+  RiDeleteBin2Line,
+} from "react-icons/ri";
+
+import { BiPlus, BiMinus } from "react-icons/bi";
 
 function ProductCard({ product }) {
   const { id, title, price, image } = product;
+  const [state, dispatch] = useCart();
+  const quantity = productQuantity(state, id);
+  const clickHandler = (action) => {
+    dispatch({ type: action, payload: product });
+  };
+
   return (
     <div className={Styles.card}>
       <img src={image} />
@@ -14,7 +29,39 @@ function ProductCard({ product }) {
         <Link to={`/products/${id}`}>
           <RiMoreFill />
         </Link>
-        <RiShoppingCartLine />
+        {quantity == 0 && (
+          <button
+            onClick={() => clickHandler("ADD_ITEM")}
+            className={Styles.button}
+          >
+            <RiShoppingCartLine />
+          </button>
+        )}
+        {quantity > 0 && (
+          <button
+            onClick={() => clickHandler("INCREASE")}
+            className={Styles.button}
+          >
+            <BiPlus />
+          </button>
+        )}
+        {!!quantity && <p>{quantity}</p>}
+        {quantity == 1 && (
+          <button
+            onClick={() => clickHandler("REMOVE_ITEM")}
+            className={Styles.button}
+          >
+            <RiDeleteBin2Line />
+          </button>
+        )}
+        {quantity > 1 && (
+          <button
+            onClick={() => clickHandler("DECREASE")}
+            className={Styles.button}
+          >
+            <BiMinus />
+          </button>
+        )}
       </div>
     </div>
   );

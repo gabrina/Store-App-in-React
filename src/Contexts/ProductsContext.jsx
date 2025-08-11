@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import api from "../Services/config";
 
-const productsContex = createContext();
+const productsContext = createContext();
 
 function ProductsProvider({ children }) {
   const [products, setProducts] = useState([]);
@@ -17,14 +17,14 @@ function ProductsProvider({ children }) {
   }, []);
   //async await or then and catch
   return (
-    <productsContex.Provider value={products}>
+    <productsContext.Provider value={products}>
       {children}
-    </productsContex.Provider>
+    </productsContext.Provider>
   );
 }
 
 const useProducts = () => {
-  return useContext(productsContex);
+  return useContext(productsContext);
 };
 
 const useProductDetail = (id) => {
