@@ -1,12 +1,121 @@
-# React + Vite
+# 🛒 React Store App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+https://github.com/gabrina/Store-App-in-React/blob/main/public/screenshot.png?raw=true
 
-Currently, two official plugins are available:
+A modern e-commerce application built with React that showcases product listings, shopping cart functionality, and responsive design.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ⚙️ Features
 
-## Expanding the ESLint configuration
+    🛒 Shopping Cart - Add/remove products, adjust quantities
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+    🏪 Product Catalog - Browse products with filtering options
+
+    🔍 Product Details - Detailed view for each product
+
+    📱 Fully Responsive - Works on mobile, tablet, and desktop
+
+    ⚛️ React Context API - State management for cart functionality
+
+    � React Router - Seamless navigation between pages
+
+## 🛠️ Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- Node.js and npm installed  
+  React apps require Node.js (which includes npm) to run locally.  
+  Download and install from: https://nodejs.org/  
+  To verify installation, run:
+  ```bash
+  node -v
+  npm -v
+  ```
+
+## 📦 Installation
+
+To get a local copy up and running, follow these steps:
+
+1. **Clone the repository:**
+
+```bash
+git clone https://github.com/gabrina/Crypto-App.git
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the development server:
+
+```bash
+npm run dev
+```
+
+The app will be available at http://localhost:3000.
+
+🧱
+
+## 🧱 Project Structure
+
+├── public
+├── src
+│ ├── assets # Images and icons
+│ ├── components # Reusable components
+│ │ ├── Cart
+│ │ ├── Footer
+│ │ ├── Navbar
+│ │ ├── Product
+│ │ └── ProductList
+│ ├── context # React context providers
+│ │ └── CartContext.js
+│ ├── pages # Application pages
+│ │ ├── CartPage.js
+│ │ ├── Home.js
+│ │ └── ProductDetails.js
+│ ├── App.js # Main application component
+│ └── index.js # Entry point
+├── .gitignore
+├── package.json
+└── README.md
+
+## 🛠️ Built With
+
+    React 19
+
+    React Router 7
+
+    React Context API
+
+    CSS Modules
+
+    HTML5
+
+    JavaScript (ES6+)
+
+    Netlify (Deployment)
+
+## 🤝🏼 Contributing
+
+Contributions are welcome! Please follow these steps:
+
+    Fork the repository
+
+    Create your feature branch (git checkout -b feature/your-feature)
+
+    Commit your changes (git commit -am 'Add some feature')
+
+    Push to the branch (git push origin feature/your-feature)
+
+    Open a pull request
+
+## 📝 License
+
+This project is open-source.
+
+## 💬 Contact
+
+Fatemeh Heidari - gabrina101@gmail.com
+
+Project Link: https://github.com/gabrina/Store-App-in-React
