@@ -1,7 +1,5 @@
 # 🛒 React Store App
 
-https://github.com/gabrina/Store-App-in-React/blob/main/public/screenshot.png?raw=true
-
 A modern e-commerce application built with React that showcases product listings, shopping cart functionality, and responsive design.
 
 ## ⚙️ Features
