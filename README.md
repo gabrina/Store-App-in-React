@@ -55,11 +55,11 @@ npm run dev
 
 The app will be available at http://localhost:3000.
 
-🧱
 
 ## 🧱 Project Structure
 
 ├── public
+
 ├── src
 │ ├── assets # Images and icons
 │ ├── components # Reusable components
@@ -82,33 +82,31 @@ The app will be available at http://localhost:3000.
 
 ## 🛠️ Built With
 
-    React 19
+React 19
 
-    React Router 7
+React Router 7
 
-    React Context API
+React Context API
 
-    CSS Modules
+CSS Modules
 
-    HTML5
+HTML5
 
-    JavaScript (ES6+)
-
-    Netlify (Deployment)
+JavaScript (ES6+)
 
 ## 🤝🏼 Contributing
 
 Contributions are welcome! Please follow these steps:
 
-    Fork the repository
+Fork the repository
 
-    Create your feature branch (git checkout -b feature/your-feature)
+Create your feature branch (git checkout -b feature/your-feature)
 
-    Commit your changes (git commit -am 'Add some feature')
+Commit your changes (git commit -am 'Add some feature')
 
-    Push to the branch (git push origin feature/your-feature)
+Push to the branch (git push origin feature/your-feature)
 
-    Open a pull request
+Open a pull request
 
 ## 📝 License
 
