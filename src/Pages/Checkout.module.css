@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+}
+
+.sidebar {
+  border: 1px solid var(--global-border-color);
+  border-radius: var(--global-radius);
+  background-color: white;
+  width: 25%;
+  height: 250px;
+  padding: 20px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.sidebar span {
+  margin-left: 5px;
+  color: var(--blue);
+  font-weight: bold;
+}
+
+.sidebar svg {
+  color: var(--blue);
+}
+
+.sidebar button {
+  border: 1px solid var(--global-border-color);
+  border-radius: var(--global-radius);
+  height: 35px;
+  background-color: var(#f9fafc);
+  color: var(--blue);
+  font-weight: bold;
+  transition: 0.2s ease-in;
+}
+
+.sidebar button:hover {
+  background-color: var(--blue);
+  color: white;
+  cursor: pointer;
+}
+
+.cart {
+  width: 75%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+}
+
+.empty {
+  display: flex;
+  border-radius: var(--global-radius);
+  border: 1px solid var(--global-border-color);
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+  padding: 20px 15px 5px 15px;
+}
