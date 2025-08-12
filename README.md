@@ -61,23 +61,41 @@ The app will be available at http://localhost:3000.
 ├── public
 
 ├── src
+
 │ ├── assets # Images and icons
+
 │ ├── components # Reusable components
+
 │ │ ├── Cart
+
 │ │ ├── Footer
+
 │ │ ├── Navbar
+
 │ │ ├── Product
+
 │ │ └── ProductList
+
 │ ├── context # React context providers
+
 │ │ └── CartContext.js
+
 │ ├── pages # Application pages
+
 │ │ ├── CartPage.js
+
 │ │ ├── Home.js
+
 │ │ └── ProductDetails.js
+
 │ ├── App.js # Main application component
+
 │ └── index.js # Entry point
+
 ├── .gitignore
+
 ├── package.json
+
 └── README.md
 
 ## 🛠️ Built With
