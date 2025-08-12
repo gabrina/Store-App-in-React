@@ -6,17 +6,17 @@ A modern e-commerce application built with React that showcases product listings
 
 ## ⚙️ Features
 
-    🛒 Shopping Cart - Add/remove products, adjust quantities
+🛒 Shopping Cart - Add/remove products, adjust quantities
 
-    🏪 Product Catalog - Browse products with filtering options
+🏪 Product Catalog - Browse products with filtering options
 
-    🔍 Product Details - Detailed view for each product
+🔍 Product Details - Detailed view for each product
 
-    📱 Fully Responsive - Works on mobile, tablet, and desktop
+📱 Fully Responsive - Works on mobile, tablet, and desktop
 
-    ⚛️ React Context API - State management for cart functionality
+⚛️ React Context API - State management for cart functionality
 
-    � React Router - Seamless navigation between pages
+� React Router - Seamless navigation between pages
 
 ## 🛠️ Prerequisites
 
